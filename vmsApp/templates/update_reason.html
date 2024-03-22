@@ -1,0 +1,13 @@
+{% extends 'base_generic.html' %}
+
+{% block content %}
+    <h2>Update Reason</h2>
+    <form method="post">
+        {% csrf_token %}
+        <label for="reason">Reason:</label><br>
+        <textarea id="reason" name="reason" rows="4" cols="50">
+            {{ visitor.reason }}
+        </textarea><br>
+        <input type="submit" value="Update">
+    </form>
+{% endblock %}

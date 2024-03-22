@@ -1,0 +1,101 @@
+{% load qr_code %} {% load static %} {% load humanize %}
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    
+    #uni_modal .modal-footer {
+        display: none;
+    }
+    
+    #uni_modal .modal-sub-footer {
+        display: flex;
+    }
+
+    @media print {
+        /* Hide unnecessary elements */
+        #uni_modal .modal-sub-footer {
+            display: none;
+        }
+        .print-button {
+            display: none;
+        }
+        /* Add additional styles for printing */
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 5px;
+            border: 1px solid #ccc;
+        }
+    }
+</style>
+<div class="container-fluid" id="e-details">
+    <button class="print-button" onclick="window.print()">Print</button>
+    <table class="table">
+        <tbody> <tr>
+           
+        </tr>
+            <tr>
+                <th>Visiting Department</th>
+                <td>{{visitor.department}}</td>
+            </tr>
+            <tr>
+                <th>Court Number</th>
+                <td>{{visitor.court_id}}</td>
+            </tr>
+            <tr>
+                <th>Case Number</th>
+                <td>{{visitor.case_id}}</td>
+            </tr>
+            <tr>
+                <th>ID Number</th>
+                <td>{{visitor.person_id}}</td>
+            </tr>
+            <tr>
+                <th>Offender Name</th>
+                <td>{{visitor.name}}</td>
+            </tr>
+            <tr>
+                <th>Gender</th>
+                <td>{{visitor.gender}}</td>
+            </tr>
+            <tr>
+                <th>Contact </th>
+                <td>{{visitor.contact}}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{visitor.email}}</td>
+            </tr>
+            <tr>
+                <th>Address</th>
+                <td>{{visitor.address}}</td>
+            </tr>
+            <tr>
+                <th>Reason For Offender Visits</th>
+                <td>{{visitor.reason}}</td>
+            </tr>
+            <tr>
+                <th>Date </th>
+                <td>{{visitor.date_added|date:"F d, Y h:i A"}}</td>
+            </tr>
+            <tr>
+                <th>Court comment</th>
+                <td>{{visitor.comment}}</td>
+            </tr>
+            
+                        </tbody>
+                    </table>
+                      
+            
+        </tbody>
+    </table>
+</div>
+
